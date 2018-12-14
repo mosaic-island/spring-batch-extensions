@@ -82,7 +82,7 @@ public class PoiItemReader<T> extends AbstractExcelItemReader<T> {
             throw new IllegalStateException("InputStream MUST either support mark/reset, or be wrapped as a PushbackInputStream");
         }
         this.workbook = WorkbookFactory.create(workbookStream);
-        this.workbook.setMissingCellPolicy(Row.CREATE_NULL_AS_BLANK);
+        this.workbook.setMissingCellPolicy(Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
     }
 
 }

@@ -22,13 +22,13 @@
 
     <groupId>org.springframework.batch</groupId>
     <artifactId>spring-batch-excel</artifactId>
-    <version>0.5.0-SNAPSHOT</version>
+    <version>2019.1.0</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.batch.version>3.0.3.RELEASE</spring.batch.version>
+        <spring.batch.version>4.0.1.RELEASE</spring.batch.version>
         <jxl.version>2.6.12</jxl.version>
-        <poi.version>3.11</poi.version>
+        <poi.version>4.0.1</poi.version>
     </properties>
 
     <dependencies>
@@ -82,6 +82,20 @@
         </dependency>
     </dependencies>
 
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>mi-nexus-snapshots</id>
+            <name>mi-snapshots</name>
+            <url>https://nexus.columbus-qa.product.which.co.uk/repository/maven-snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>mi-nexus-releases</id>
+            <name>mi-releases</name>
+            <url>https://nexus.columbus-qa.product.which.co.uk/repository/maven-releases</url>
+        </repository>
+    </distributionManagement>
+
     <build>
         <plugins>
             <plugin>
@@ -89,8 +103,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.2</version>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>

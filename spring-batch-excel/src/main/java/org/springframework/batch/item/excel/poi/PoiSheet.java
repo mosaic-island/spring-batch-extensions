@@ -16,10 +16,7 @@
 
 package org.springframework.batch.item.excel.poi;
 
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.DateUtil;
-import org.apache.poi.ss.usermodel.FormulaEvaluator;
-import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.*;
 import org.springframework.batch.item.excel.Sheet;
 
 import java.util.Date;
@@ -83,7 +80,7 @@ public class PoiSheet implements Sheet {
         for (int i = 0; i < getNumberOfColumns(); i++) {
             Cell cell = row.getCell(i);
             switch (cell.getCellType()) {
-                case Cell.CELL_TYPE_NUMERIC:
+                case NUMERIC:
                     if (DateUtil.isCellDateFormatted(cell)) {
                         Date date = cell.getDateCellValue();
                         cells.add(String.valueOf(date.getTime()));
@@ -91,14 +88,14 @@ public class PoiSheet implements Sheet {
                         cells.add(String.valueOf(cell.getNumericCellValue()));
                     }
                     break;
-                case Cell.CELL_TYPE_BOOLEAN:
+                case BOOLEAN:
                     cells.add(String.valueOf(cell.getBooleanCellValue()));
                     break;
-                case Cell.CELL_TYPE_STRING:
-                case Cell.CELL_TYPE_BLANK:
+                case STRING:
+                case BLANK:
                     cells.add(cell.getStringCellValue());
                     break;
-                case Cell.CELL_TYPE_FORMULA:
+                case FORMULA:
                     cells.add(getFormulaEvaluator().evaluate(cell).formatAsString());
                     break;
                 default:

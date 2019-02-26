@@ -22,7 +22,7 @@
 
     <groupId>org.springframework.batch</groupId>
     <artifactId>spring-batch-excel</artifactId>
-    <version>2019.1.0</version>
+    <version>2019.1.2</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -103,8 +103,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.2</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
             <plugin>

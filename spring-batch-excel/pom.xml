@@ -22,13 +22,13 @@
 
     <groupId>org.springframework.batch</groupId>
     <artifactId>spring-batch-excel</artifactId>
-    <version>2019.1.2</version>
+    <version>2023.1.0</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.batch.version>4.0.3.RELEASE</spring.batch.version>
+        <spring.batch.version>4.3.7</spring.batch.version>
         <jxl.version>2.6.12</jxl.version>
-        <poi.version>4.0.1</poi.version>
+        <poi.version>5.2.3</poi.version>
     </properties>
 
     <dependencies>
@@ -36,6 +36,11 @@
             <groupId>org.springframework.batch</groupId>
             <artifactId>spring-batch-core</artifactId>
             <version>${spring.batch.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.14.1</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.batch</groupId>
@@ -47,6 +52,18 @@
             <artifactId>jxl</artifactId>
             <version>${jxl.version}</version>
             <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.19.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.poi</groupId>
@@ -65,19 +82,19 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13.1</version>
+            <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <version>1.10.19</version>
+            <version>4.11.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>4.0.5.RELEASE</version>
+            <version>5.3.25</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
